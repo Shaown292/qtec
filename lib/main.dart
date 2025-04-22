@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qtec/repo/product_repository.dart';
-import 'package:qtec/screen/home_ui.dart';
+import 'package:qtec/screen/product_list_screen.dart';
 
 import 'home/product_bloc.dart';
 
