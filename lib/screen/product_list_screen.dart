@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qtec/const/app_text_style/app_text_style.dart';
 
 import '../home/product_bloc.dart';
 
@@ -36,7 +37,10 @@ class _ProductListScreenState extends State<ProductListScreen> {
               },
               decoration: InputDecoration(
                 hintText: 'Search Anything...',
-                contentPadding: EdgeInsets.symmetric(vertical: 17, horizontal: 16),
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 17,
+                  horizontal: 16,
+                ),
                 prefixIcon: Container(
                   height: 20,
                   width: 20,
@@ -91,27 +95,39 @@ class _ProductListScreenState extends State<ProductListScreen> {
                     if (state.products.isEmpty) {
                       return const Center(child: Text("No products found."));
                     }
-                    return ListView.builder(
-                      itemCount: state.products.length,
+                    return GridView.builder(
+                      scrollDirection: Axis.vertical,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2, // 2 rows
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        childAspectRatio: 0.7, // width / height
+                      ),
+                      itemCount:  state.products.length,
                       itemBuilder: (context, index) {
                         final product = state.products[index];
-                        return Card(
-                          margin: const EdgeInsets.all(8),
-                          child: ListTile(
-                            leading: Image.network(
-                              product.thumbnail,
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.cover,
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 164,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                image: DecorationImage(
+                                    image: NetworkImage(product.thumbnail),
+                                    fit: BoxFit.cover
+                                ),
+                              ),
                             ),
-                            title: Text(product.title),
-                            subtitle: Text(
-                              "Price: \$${product.price}\nRating: ${product.rating}",
-                            ),
-                          ),
+                            Text(product.title, style: AppTextStyle.inter12w400Black,),
+                            Text("\$${product.price}\nRating: ${product.rating}", style: AppTextStyle.inter12w400Black,),
+                          ],
                         );
                       },
                     );
+
+
                   } else if (state is ProductError) {
                     return Center(child: Text(state.message));
                   } else {
