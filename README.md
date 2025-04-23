@@ -38,8 +38,14 @@ lib/
 ---
 
 ## 🖼️ UI Preview (Optional)
+![App Screenshot] ([screenshots/home_screen.png](https://github.com/Shaown292/qtec/blob/master/Screenshot_20250423_181221.png))
+![App Screenshot] ([screenshots/home_screen.png](https://github.com/Shaown292/qtec/blob/master/Screenshot_20250423_181255.png))
+![App Screenshot]([screenshots/home_screen.png](https://github.com/Shaown292/qtec/blob/master/Screenshot_20250423_181312.png))
 
-![Alt Text]([image-path-or-URL](https://github.com/Shaown292/qtec/blob/master/Screenshot_20250423_181221.png))
+
+
+
+
 
 
 ---
