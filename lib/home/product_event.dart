@@ -7,7 +7,9 @@ part of 'product_bloc.dart';
 @immutable
 sealed class ProductEvent {}
 
-class FetchProducts extends ProductEvent {}
+class FetchProducts extends ProductEvent {
+
+}
 
 class SearchProducts extends ProductEvent {
   final String query;

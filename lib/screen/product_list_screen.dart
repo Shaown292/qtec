@@ -106,7 +106,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                                 SizedBox(width: 5,),
                                 Text("\$${product.price}", style: AppTextStyle.inter10w500Grey,),
                                 SizedBox(width: 5,),
-                                Text("${product.price}% OFF", style: AppTextStyle.inter10w500Orange,),
+                                Text("10% OFF", style: AppTextStyle.inter10w500Orange,),
                               ],
                             ),
                             SizedBox(height: 5,),
