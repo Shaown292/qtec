@@ -86,7 +86,6 @@ Example:
 
 ## 🧠 What I Learned
 
-- Clean state separation with BLoC
 - Real-time UI updates based on state
 - Handling search and sort with API calls
 - Efficient architecture for scalable apps
@@ -97,10 +96,10 @@ Example:
 
 If you have any questions, feel free to reach out:
 
-- **Name:** [Your Name]
-- **Email:** [Your Email]
-- **LinkedIn:** [Your LinkedIn Profile]
-- **GitHub:** [Your GitHub Profile]
+- **Name:** Kamruzzaman Shaown
+- **Email:** kzshaown@gmail.com
+- **LinkedIn:**  https://www.linkedin.com/in/kamruzzaman-shaown-254b70156/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people%3Be%2Bup6pOnTv67dtCG2NufBw%3D%3D
+- **GitHub:** [[Your GitHub Profile]](https://github.com/Shaown292)
 
 ---
 
@@ -108,8 +107,5 @@ If you have any questions, feel free to reach out:
 
 This project is for demonstration and interview purposes.
 
-```
 
----
 
-Would you like help customizing it with your **name, repo link, screenshots, or specific API endpoints**? I can tweak it and finalize it for your GitHub.
