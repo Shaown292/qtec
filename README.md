@@ -39,6 +39,7 @@ lib/
 
 ## 🖼️ UI Preview (Optional)
 
+![Alt Text]([image-path-or-URL](https://github.com/Shaown292/qtec/blob/master/Screenshot_20250423_181221.png))
 
 
 ---
