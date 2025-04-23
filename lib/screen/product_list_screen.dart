@@ -61,29 +61,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
               ),
             ),
 
-            // Sort Dropdown
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: DropdownButton<String>(
-                value: sortOption,
-                isExpanded: true,
-                items:
-                    ["None", "Price: Low to High", "Rating: High to Low"]
-                        .map((e) => DropdownMenuItem(value: e, child: Text(e)))
-                        .toList(),
-                onChanged: (value) {
-                  if (value == null) return;
-                  setState(() => sortOption = value);
-                  if (value == "Price: Low to High") {
-                    context.read<ProductBloc>().add(SortByPrice());
-                  } else if (value == "Rating: High to Low") {
-                    context.read<ProductBloc>().add(SortByRating());
-                  } else {
-                    context.read<ProductBloc>().add(FetchProducts());
-                  }
-                },
-              ),
-            ),
+
 
             // Product List
             Expanded(
@@ -121,7 +99,36 @@ class _ProductListScreenState extends State<ProductListScreen> {
                               ),
                             ),
                             Text(product.title, style: AppTextStyle.inter12w400Black,),
-                            Text("\$${product.price}\nRating: ${product.rating}", style: AppTextStyle.inter12w400Black,),
+                            SizedBox(height: 5,),
+                            Row(
+                              children: [
+                                Text("\$${product.price}", style: AppTextStyle.inter14w600Black,),
+                                SizedBox(width: 5,),
+                                Text("\$${product.price}", style: AppTextStyle.inter10w500Grey,),
+                                SizedBox(width: 5,),
+                                Text("${product.price}% OFF", style: AppTextStyle.inter10w500Orange,),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  // padding: EdgeInsets.all(2),
+                                  height: 16,
+                                  width: 16,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(2),
+                                    color: Color(0xFFF59E0B)
+                                  ),
+                                  child: Center(child: Icon(Icons.star, size: 14, color: Colors.white,),),
+                                ),
+                                SizedBox(width: 4,),
+                                Text("${product.rating}", style: AppTextStyle.inter12w500Black,),
+                                SizedBox(width: 4,),
+                                Text("(41)", style: AppTextStyle.inter12w400Grey,),
+                              ],
+                            ),
                           ],
                         );
                       },
@@ -132,6 +139,29 @@ class _ProductListScreenState extends State<ProductListScreen> {
                     return Center(child: Text(state.message));
                   } else {
                     return const SizedBox();
+                  }
+                },
+              ),
+            ),
+            // Sort Dropdown
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: DropdownButton<String>(
+                value: sortOption,
+                isExpanded: true,
+                items:
+                ["None", "Price: Low to High", "Rating: High to Low"]
+                    .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                    .toList(),
+                onChanged: (value) {
+                  if (value == null) return;
+                  setState(() => sortOption = value);
+                  if (value == "Price: Low to High") {
+                    context.read<ProductBloc>().add(SortByPrice());
+                  } else if (value == "Rating: High to Low") {
+                    context.read<ProductBloc>().add(SortByRating());
+                  } else {
+                    context.read<ProductBloc>().add(FetchProducts());
                   }
                 },
               ),
